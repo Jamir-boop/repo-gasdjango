@@ -1,0 +1,18 @@
+{% load static %}
+<header>
+
+    <img src="{% static 'image/logo.png'%}" alt="logo" width="300px">
+    <nav>
+        <button>restaurantes</button>
+        <button>carta</button>
+        <button>promociones</button>
+        <!-- <button>login</button> -->
+        {% if request.user.is_authenticated %}
+            <p></p>
+            <a href="{% url 'logout' %}">logout {{user.username}}</a>
+        {% else %}
+            <a href="{% url 'login' %}">login</a>
+        {% endif %}
+    </nav>
+
+</header>

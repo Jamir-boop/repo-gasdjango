@@ -1,0 +1,23 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %} Index {% endblock %}
+{% block style %} {% static 'css/main.css' %} {% endblock %}
+
+{% block content %}
+{% include "main/snippets/header.html" %}
+
+{% if messages %}
+{% for message in messages %}
+{{ message }}
+{% endfor %}
+{% endif %}
+
+<section>
+    <h1>Esta es la página principal</h1>
+    <a href="{% url 'register' %}">registro</a>
+</section>
+
+{% include "main/snippets/footer.html" %}
+
+{% endblock %}

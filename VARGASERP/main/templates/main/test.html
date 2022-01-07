@@ -1,0 +1,12 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %} TEST {% endblock %}
+{% block style %} {% static 'css/index.css' %} {% endblock %}
+
+{% block content %}
+<section>
+    {% for admin in admins %}
+        <h1>{{ admin.nombre }}</h1>
+    {% endfor %} 
+</section>
+{% endblock %}
