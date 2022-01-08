@@ -1,7 +1,8 @@
 {% extends "main/base.html" %}
 {% load static %}
+{% load has_group %}
 
-{% block title %} Index {% endblock %}
+{% block title %} Dashboard Gas {% endblock %}
 {% block style %} {% static 'css/main.css' %} {% endblock %}
 
 {% block content %}
@@ -14,10 +15,16 @@
 {% endif %}
 
 <section>
-    <h1>Esta es la página principal</h1>
+    <h1>Dashboard</h1>
     <a href="{% url 'register' %}">registro</a>
+    <a href="admin/">admin menu</a>
 </section>
 
-{% include "main/snippets/footer.html" %}
+{% if request.user|has_group:"admin" %}
+<section>
+    <h1 style="color: peru;">este contenido solo se muestra para el admin</h1>
+</section>
+{% endif %}
 
+{% include "main/snippets/footer.html" %}
 {% endblock %}

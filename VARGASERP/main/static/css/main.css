@@ -56,4 +56,25 @@ body {
   background: #262626;
   color: #fff;
 }
+
+h1 {
+  font-size: 2 rem;
+}
+
+a {
+  all: unset;
+  font-size: 1.25rem;
+  cursor: pointer;
+  text-decoration: underline;
+  color: #ff47d1;
+}
+
+a:hover {
+  color: white;
+}
+
+input {
+  background: #262626;
+  color: #fff;
+}
 /*# sourceMappingURL=main.css.map */
