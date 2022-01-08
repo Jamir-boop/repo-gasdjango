@@ -1,0 +1,37 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% load has_group %}
+
+{% block title %} Dashboard Gas {% endblock %}
+{% block style %} {% static 'css/dashboard.css' %} {% endblock %}
+{% block content %}
+<!-- {% include "main/snippets/header.html" %} -->
+{% include "main/snippets/sidebar.html" %}
+
+{% if messages %}
+{% for message in messages %}
+{{ message }}
+{% endfor %}
+{% endif %}
+
+<main>
+    AGREGAR EGRESO
+    <form action="/validar-edicion-egreso/{{egreso.id}}" method="post">
+
+        {% csrf_token %}
+
+        <label for="txtCategoria">Categoria</label>
+        <input type="text" id="txtCategoria" name="txtCategoria" value="{{egreso.categoria}}" required>
+
+        <label for="txtDescripcion">Descripcion</label>
+        <input type="text" id="txtDescripcion" name="txtDescripcion" value="{{egreso.descripcion}}" required>
+
+        <label for="txtCostos">Costo</label>
+        <input type="text" id="txtCostos" name="txtCostos" value="{{egreso.costos}}" required>
+
+        <button type="submit">Actualizar</button>
+    </form>
+</main>
+
+<!-- {% include "main/snippets/footer.html" %} -->
+{% endblock %}
