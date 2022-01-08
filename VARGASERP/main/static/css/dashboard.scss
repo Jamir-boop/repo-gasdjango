@@ -13,7 +13,7 @@ body {
 	@include flex(column);
 	align-items: center;
 	position: absolute;
-	width: 14vw;
+	width: 16vw;
 	min-width: 200px;
 	height: 100vh;
 	box-sizing: border-box;
@@ -26,32 +26,69 @@ body {
 	}
 	&__profile {
 		text-align: center;
-		padding: 5vh 0 !important;
+		padding: 2vh 0 !important;
 	}
 	&__title {
 		font-size: fontz(normal);
 		text-transform: uppercase;
 		font-weight: bold;
 		cursor: pointer;
+		color: darken(white, 5%);
+		transition: color $hover_animation_time ease-in-out;
+
+		&:hover {
+			color: white;
+		}
+	}
+	&__title.xtra--padding {
+		padding-bottom: 0.8rem;
 	}
 	&__list {
 		text-align: left;
 		font-size: fontz(normal);
-		padding: 1rem;
-		li {
-			padding: 0.25em;
-		}
+		padding: 0 2rem 2rem 2rem;
 		a {
 			@include button;
+			padding: 0.8em 0;
+			border-radius: 10%;
+			text-transform: capitalize;
+
 			color: darken(white, 20%);
-			transition: color $hover_animation_time ease-in-out;
+			display: block;
+
+			transition: all $hover_animation_time ease-in-out;
 			&:hover {
 				color: white;
+				background-color: lighten($void, 20%);
 			}
 		}
 	}
 	&--hidden {
 		display: none;
+		transition: all $hover_animation_time ease-in-out;
+	}
+
+	&__account {
+		position: absolute;
+		bottom: 0;
+		@include flex(row);
+		align-items: flex-end;
+		width: 100%;
+		a {
+			@include button;
+			padding: 0.8rem 0.3em;
+			text-align: center;
+			width: 100%;
+			display: block;
+			text-transform: uppercase;
+			color: darken(white, 20%);
+			transition: color $hover_animation_time ease-in-out;
+
+			&:hover {
+				color: white;
+				background-color: lighten($void, 20%);
+			}
+		}
 	}
 }
 

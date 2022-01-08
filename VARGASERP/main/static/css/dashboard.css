@@ -94,7 +94,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  width: 14vw;
+  width: 16vw;
   min-width: 200px;
   height: 100vh;
   -webkit-box-sizing: border-box;
@@ -109,7 +109,7 @@ body {
 
 .navbar__profile {
   text-align: center;
-  padding: 5vh 0 !important;
+  padding: 2vh 0 !important;
 }
 
 .navbar__title {
@@ -117,16 +117,23 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   cursor: pointer;
+  color: #f2f2f2;
+  -webkit-transition: color 180ms ease-in-out;
+  transition: color 180ms ease-in-out;
+}
+
+.navbar__title:hover {
+  color: white;
+}
+
+.navbar__title.xtra--padding {
+  padding-bottom: 0.8rem;
 }
 
 .navbar__list {
   text-align: left;
   font-size: clamp(16px, 1vw, 25px);
-  padding: 1rem;
-}
-
-.navbar__list li {
-  padding: 0.25em;
+  padding: 0 2rem 2rem 2rem;
 }
 
 .navbar__list a {
@@ -134,17 +141,60 @@ body {
   cursor: pointer;
   text-decoration: none;
   text-rendering: optimizeLegibility;
+  padding: 0.8em 0;
+  border-radius: 10%;
+  text-transform: capitalize;
+  color: #cccccc;
+  display: block;
+  -webkit-transition: all 180ms ease-in-out;
+  transition: all 180ms ease-in-out;
+}
+
+.navbar__list a:hover {
+  color: white;
+  background-color: #536d86;
+}
+
+.navbar--hidden {
+  display: none;
+  -webkit-transition: all 180ms ease-in-out;
+  transition: all 180ms ease-in-out;
+}
+
+.navbar__account {
+  position: absolute;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 100%;
+}
+
+.navbar__account a {
+  all: unset;
+  cursor: pointer;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  padding: 0.8rem 0.3em;
+  text-align: center;
+  width: 100%;
+  display: block;
+  text-transform: uppercase;
   color: #cccccc;
   -webkit-transition: color 180ms ease-in-out;
   transition: color 180ms ease-in-out;
 }
 
-.navbar__list a:hover {
+.navbar__account a:hover {
   color: white;
-}
-
-.navbar--hidden {
-  display: none;
+  background-color: #536d86;
 }
 
 main {
