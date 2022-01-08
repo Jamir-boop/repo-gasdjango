@@ -1,6 +1,6 @@
 {% load static %}
 <header>
-	<img src="{% static 'image/logo.jpg' %}" alt="logo" width="300px" />
+	<img src="{% static 'image/logo.jpg' %}" alt="logo" width="100px" />
 	<nav>
 		{% if request.user.is_authenticated %}
 		<a href="{% url 'logout' %}">logout {{user.username}}</a>

@@ -1,0 +1,72 @@
+@import "./reset";
+@import "./variables";
+@import "./mixins";
+
+body {
+	overflow-x: hidden;
+
+	background: $void;
+	color: white;
+}
+
+.navbar {
+	@include flex(column);
+	align-items: center;
+	position: absolute;
+	width: 14vw;
+	min-width: 200px;
+	height: 100vh;
+	box-sizing: border-box;
+
+	background: lighten($void, 5%);
+
+	&__group {
+		text-align: center;
+		width: 100%;
+	}
+	&__profile {
+		text-align: center;
+		padding: 5vh 0 !important;
+	}
+	&__title {
+		font-size: fontz(normal);
+		text-transform: uppercase;
+		font-weight: bold;
+		cursor: pointer;
+	}
+	&__list {
+		text-align: left;
+		font-size: fontz(normal);
+		padding: 1rem;
+		li {
+			padding: 0.25em;
+		}
+		a {
+			@include button;
+			color: darken(white, 20%);
+			transition: color $hover_animation_time ease-in-out;
+			&:hover {
+				color: white;
+			}
+		}
+	}
+	&--hidden {
+		display: none;
+	}
+}
+
+main {
+	@include flex_center(column);
+	font-size: fontz(title);
+	text-align: center;
+	a {
+		@include button;
+		color: $accent_color;
+		cursor: pointer;
+
+		transition: color $hover_animation_time ease-in-out;
+		&:hover {
+			color: $accent_color2;
+		}
+	}
+}

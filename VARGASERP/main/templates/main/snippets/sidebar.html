@@ -1,0 +1,28 @@
+{% load has_group %}
+
+<aside class="navbar">
+    {% if request.user.is_authenticated %}
+    <div class="navbar__group navbar__profile">
+        <h1 class="navbar__title">{{user.username}}</h1>
+    </div>
+    {% endif %}
+
+    <div class="navbar__group">
+        <h1 class="navbar__title" id="inout">Ingresos / Salidas</h1>
+        <ul class="navbar__list" id="inout__list">
+            <li><a href="#">Stock</a></li>
+            <li><a href="#">ventas</a></li>
+            <li><a href="#">Egresos</a></li>
+        </ul>
+    </div>
+    {% if request.user|has_group:"admin" %}
+    <div class="navbar__group">
+        <h1 class="navbar__title" id="group2">Grupo2</h1>
+        <small style="color: peru; font-size: .5rem;">este contenido solo se muestra para el admin</small>
+        <ul class="navbar__list" id="group2__list">
+            <li><a href="#">Usuarios</a></li>
+            <li><a href="#">Roles</a></li>
+        </ul>
+    </div>
+    {% endif %}
+</aside>

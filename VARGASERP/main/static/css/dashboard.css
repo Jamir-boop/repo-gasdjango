@@ -1,0 +1,182 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@-webkit-keyframes animated_gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@keyframes animated_gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+body {
+  overflow-x: hidden;
+  background: #2c3a47;
+  color: white;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  width: 14vw;
+  min-width: 200px;
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #364757;
+}
+
+.navbar__group {
+  text-align: center;
+  width: 100%;
+}
+
+.navbar__profile {
+  text-align: center;
+  padding: 5vh 0 !important;
+}
+
+.navbar__title {
+  font-size: clamp(16px, 1vw, 25px);
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navbar__list {
+  text-align: left;
+  font-size: clamp(16px, 1vw, 25px);
+  padding: 1rem;
+}
+
+.navbar__list li {
+  padding: 0.25em;
+}
+
+.navbar__list a {
+  all: unset;
+  cursor: pointer;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  color: #cccccc;
+  -webkit-transition: color 180ms ease-in-out;
+  transition: color 180ms ease-in-out;
+}
+
+.navbar__list a:hover {
+  color: white;
+}
+
+.navbar--hidden {
+  display: none;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: clamp(20px, 2vw, 120px);
+  text-align: center;
+}
+
+main a {
+  all: unset;
+  cursor: pointer;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  color: #0984e3;
+  cursor: pointer;
+  -webkit-transition: color 180ms ease-in-out;
+  transition: color 180ms ease-in-out;
+}
+
+main a:hover {
+  color: #74b9ff;
+}
+/*# sourceMappingURL=dashboard.css.map */
