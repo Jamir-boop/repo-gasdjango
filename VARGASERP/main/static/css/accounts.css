@@ -1,0 +1,175 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@-webkit-keyframes animated_gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@keyframes animated_gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@font-face {
+  font-family: "Open Sans", sans-serif;
+  src: url("../font/OpenSans-Bold.ttf") format("truetype"), url("../font/OpenSans-BoldItalic.ttf") format("truetype"), url("../font/OpenSans-ExtraBold.ttf") format("truetype"), url("../font/OpenSans-ExtraBoldItalic.ttf") format("truetype"), url("../font/OpenSans-Italic.ttf") format("truetype"), url("../font/OpenSans-Light.ttf") format("truetype"), url("../font/OpenSans-LightItalic.ttf") format("truetype"), url("../font/OpenSans-Medium.ttf") format("truetype"), url("../font/OpenSans-MediumItalic.ttf") format("truetype"), url("../font/OpenSans-Regular.ttf") format("truetype"), url("../font/OpenSans-SemiBold.ttf") format("truetype"), url("../font/OpenSans-SemiBoldItalic.ttf") format("truetype");
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  overflow: hidden;
+  background: #2c3147;
+  color: white;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+}
+
+section h1 {
+  font-size: clamp(30px, 5vw, 280px);
+  font-weight: bold;
+  text-align: center;
+  padding: 5vh 0;
+}
+
+section form {
+  width: 50vw;
+  height: 60vh;
+  margin: 0 auto;
+  background: #181b28;
+  font-size: clamp(20px, 2vw, 120px);
+}
+
+section form .form_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+section form input[type="text"],
+section form input[type="password"] {
+  all: unset;
+  background: #181b28;
+  border: 1px solid #0984e3;
+  color: white;
+}
+
+section form input[type="submit"] {
+  all: unset;
+  text-decoration: none;
+  cursor: pointer;
+  text-rendering: optimizeLegibility;
+  background: #404766;
+  padding: 2vh 1vw;
+  -webkit-transition: background 180ms ease-in-out;
+  transition: background 180ms ease-in-out;
+}
+
+section form input[type="submit"]:hover {
+  background: #495276;
+}
+
+.message {
+  position: relative;
+  width: 80%;
+  font-size: clamp(16px, 1vw, 25px);
+  border-radius: 0.5rem;
+  background: rgba(199, 181, 21, 0.25);
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.message button {
+  all: unset;
+  text-decoration: none;
+  cursor: pointer;
+  text-rendering: optimizeLegibility;
+  font-size: clamp(20px, 2vw, 120px);
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.2rem;
+}
+
+.message.message--hidden {
+  display: none;
+}
+/*# sourceMappingURL=accounts.css.map */

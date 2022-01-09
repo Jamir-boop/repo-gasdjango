@@ -2,36 +2,21 @@
 {% load static %}
 {% load has_group %}
 
-{% block title %} Dashboard Gas {% endblock %}
+{% block title %} Registrar Egreso {% endblock %}
 {% block style %} {% static 'css/dashboard.css' %} {% endblock %}
+{% block dashboard_title %}Registrar Egreso{% endblock %}
 {% block content %}
-<!-- {% include "main/snippets/header.html" %} -->
-{% include "main/snippets/sidebar.html" %}
+<form action="/validar-egreso/" method="post">
+    {% csrf_token %}
+    <label for="txtCategoria">Categoria</label>
+    <input type="text" id="txtCategoria" name="txtCategoria" required>
 
-{% if messages %}
-{% for message in messages %}
-{{ message }}
-{% endfor %}
-{% endif %}
+    <label for="txtDescripcion">Descripcion</label>
+    <input type="text" id="txtDescripcion" name="txtDescripcion" required>
 
-<main>
-    AGREGAR EGRESO
-    <form action="/validar-egreso/" method="post">
+    <label for="txtCostos">Costo</label>
+    <input type="text" id="txtCostos" name="txtCostos" required>
 
-        {% csrf_token %}
-
-        <label for="txtCategoria">Categoria</label>
-        <input type="text" id="txtCategoria" name="txtCategoria" required>
-
-        <label for="txtDescripcion">Descripcion</label>
-        <input type="text" id="txtDescripcion" name="txtDescripcion" required>
-
-        <label for="txtCostos">Costo</label>
-        <input type="text" id="txtCostos" name="txtCostos" required>
-
-        <button type="submit">Agregar</button>
-    </form>
-</main>
-
-<!-- {% include "main/snippets/footer.html" %} -->
+    <button type="submit">Agregar</button>
+</form>
 {% endblock %}

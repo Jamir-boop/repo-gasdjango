@@ -1,28 +1,25 @@
-{% extends "main/base.html" %}
+{% extends "main/base_accounts.html" %}
 {% load static %}
 
 {% block title %} Registrar {% endblock %}
-{% block style %} {% static 'css/main.css' %} {% endblock %}
+{% block style %} {% static 'css/accounts.css' %} {% endblock %}
 
 {% block content %}
 <section>
-    <h1>registro</h1>
-    {% if messages %}
-    {% for message in messages %}
-    {{ message }}
-    {% endfor %}
-    {% endif %}
+    <h1>registro usuario</h1>
+    {% include "main/snippets/message.html" %}
 
     <form action="" method="POST">
         {% csrf_token %}
+        <div class="form_content">
+            {% for field in form %}
+            {{field.label}}
+            {{ field }}
+            {% endfor %}
 
-        {% for field in form %}
-        {{field.label}}
-        {{ field }}
-        {% endfor %}
-
-        <input type="submit" value="Registrar">
-        <a href="{% url 'main:index' %}">Volver a la pagina principal</a>
+            <input type="submit" value="Registrar">
+            <a href="{% url 'main:index' %}">Volver a la pagina principal</a>
+        </div>
     </form>
 
 </section>

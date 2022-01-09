@@ -2,23 +2,11 @@
 {% load static %}
 {% load has_group %}
 
-{% block title %} Dashboard Gas {% endblock %}
+{% block title %} Dashboard Homepage{% endblock %}
 {% block style %} {% static 'css/dashboard.css' %} {% endblock %}
+
+{% block dashboard_title %}Dashboard{% endblock %}
 {% block content %}
-<!-- {% include "main/snippets/header.html" %} -->
-
-
-<main class="main">
-    {% include "main/snippets/sidebar.html" %}
-    <div class="main__content">
-        <h1 class="main__title">Dashboard</h1>
-
-        {% include "main/snippets/message.html" %}
-
-        <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.infocaptor.com%2Fimg%2Fbeautiful_dashboard_metrics_kpi_metalic.png&f=1&nofb=1"
-            alt="demo" style="height: 100vh;">
-    </div>
-</main>
-
-<!-- {% include "main/snippets/footer.html" %} -->
+<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.infocaptor.com%2Fimg%2Fbeautiful_dashboard_metrics_kpi_metalic.png&f=1&nofb=1"
+    alt="demo" style="height: 100vh;">
 {% endblock %}

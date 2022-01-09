@@ -2,44 +2,28 @@
 {% load static %}
 {% load has_group %}
 
-{% block title %} Dashboard Gas {% endblock %}
+{% block title %} Dashboard Egresos{% endblock %}
 {% block style %} {% static 'css/dashboard.css' %} {% endblock %}
+{% block dashboard_title %}Egresos{% endblock %}
 {% block content %}
-<!-- {% include "main/snippets/header.html" %} -->
-{% include "main/snippets/sidebar.html" %}
-
-{% if messages %}
-{% for message in messages %}
-{{ message }}
-{% endfor %}
-{% endif %}
-
-<main>
-    EGRESOS
-    <table border="1">
-        <thead>
-            <th id="">Categoria</th>
-            <th id="">Descripcion</th>
-            <th id="">Costos</th>
-            <th id="" colspan="2">Opciones</th>
-        </thead>
-        <tbody>
-            {% for egreso in egresos %}
-                <tr>
-                    <td>{{egreso.categoria}}</td>
-                    <td>{{egreso.descripcion}}</td>
-                    <td>{{egreso.costos}}</td>
-                    <td><a href="/editar-egreso/{{egreso.id}}">Editar</a></td>
-                    <td><a href="/eliminar-egreso/{{egreso.id}}">Eliminar</a></td>
-                </tr>
-            {% endfor %}
-            
-        </tbody>
-        
-    </table>
-        
-    <a href="/agregar-egreso">Agregar egreso</a>
-</main>
-
-<!-- {% include "main/snippets/footer.html" %} -->
+<a href="/agregar-egreso">Agregar egreso</a>
+<table>
+    <thead>
+        <th id="">Categoria</th>
+        <th id="">Descripcion</th>
+        <th id="">Costos</th>
+        <th id="" colspan="2">Opciones</th>
+    </thead>
+    <tbody>
+        {% for egreso in egresos %}
+        <tr>
+            <td>{{egreso.categoria}}</td>
+            <td>{{egreso.descripcion}}</td>
+            <td>{{egreso.costos}}</td>
+            <td><a href="/editar-egreso/{{egreso.id}}">Editar</a></td>
+            <td><a href="/eliminar-egreso/{{egreso.id}}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}

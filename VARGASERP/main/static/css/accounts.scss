@@ -1,0 +1,83 @@
+@import "./reset";
+@import "./variables";
+@import "./mixins";
+@font-face {
+	font-family: "Open Sans", sans-serif;
+	src: url("../font/OpenSans-Bold.ttf") format("truetype"),
+		url("../font/OpenSans-BoldItalic.ttf") format("truetype"),
+		url("../font/OpenSans-ExtraBold.ttf") format("truetype"),
+		url("../font/OpenSans-ExtraBoldItalic.ttf") format("truetype"),
+		url("../font/OpenSans-Italic.ttf") format("truetype"),
+		url("../font/OpenSans-Light.ttf") format("truetype"),
+		url("../font/OpenSans-LightItalic.ttf") format("truetype"),
+		url("../font/OpenSans-Medium.ttf") format("truetype"),
+		url("../font/OpenSans-MediumItalic.ttf") format("truetype"),
+		url("../font/OpenSans-Regular.ttf") format("truetype"),
+		url("../font/OpenSans-SemiBold.ttf") format("truetype"),
+		url("../font/OpenSans-SemiBoldItalic.ttf") format("truetype");
+}
+
+body {
+	font-family: "Open Sans", sans-serif;
+	overflow: hidden;
+
+	background: $void;
+	color: white;
+}
+
+section {
+	@include fullscreensize;
+	h1 {
+		font-size: fontz(accent);
+		font-weight: bold;
+		text-align: center;
+		padding: 5vh 0;
+	}
+	form {
+		width: 50vw;
+		height: 60vh;
+		margin: 0 auto;
+		background: darken($void, 10%);
+		font-size: fontz(title);
+		.form_content {
+			@include flex_center(column);
+		}
+		input[type="text"],
+		input[type="password"] {
+			all: unset;
+			background: darken($void, 10%);
+			border: 1px solid $accent_color;
+			color: white;
+		}
+		input[type="submit"] {
+			@include button;
+			background: lighten($void, 10%);
+			padding: 2vh 1vw;
+			transition: background $hover_animation_time ease-in-out;
+			&:hover {
+				background: lighten($void, 15%);
+			}
+		}
+	}
+}
+
+.message {
+	position: relative;
+	width: 80%;
+	font-size: fontz(normal);
+	border-radius: 0.5rem;
+	background: $alert_color;
+	padding: 1rem;
+	margin: 0 auto;
+	button {
+		@include button;
+		font-size: fontz(title);
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 0.2rem;
+	}
+}
+.message.message--hidden {
+	display: none;
+}

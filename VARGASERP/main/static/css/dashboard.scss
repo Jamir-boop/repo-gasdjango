@@ -1,8 +1,24 @@
 @import "./reset";
 @import "./variables";
 @import "./mixins";
+@font-face {
+	font-family: "Open Sans", sans-serif;
+	src: url("../font/OpenSans-Bold.ttf") format("truetype"),
+		url("../font/OpenSans-BoldItalic.ttf") format("truetype"),
+		url("../font/OpenSans-ExtraBold.ttf") format("truetype"),
+		url("../font/OpenSans-ExtraBoldItalic.ttf") format("truetype"),
+		url("../font/OpenSans-Italic.ttf") format("truetype"),
+		url("../font/OpenSans-Light.ttf") format("truetype"),
+		url("../font/OpenSans-LightItalic.ttf") format("truetype"),
+		url("../font/OpenSans-Medium.ttf") format("truetype"),
+		url("../font/OpenSans-MediumItalic.ttf") format("truetype"),
+		url("../font/OpenSans-Regular.ttf") format("truetype"),
+		url("../font/OpenSans-SemiBold.ttf") format("truetype"),
+		url("../font/OpenSans-SemiBoldItalic.ttf") format("truetype");
+}
 
 body {
+	font-family: "Open Sans", sans-serif;
 	overflow: hidden;
 
 	background: $void;
@@ -157,4 +173,12 @@ main {
 }
 .message.message--hidden {
 	display: none;
+}
+
+table,
+form {
+	background-color: darken($void, 10%);
+	width: 100%;
+	min-height: 10vh;
+	border: 1px solid white;
 }
