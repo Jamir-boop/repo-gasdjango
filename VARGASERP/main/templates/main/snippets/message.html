@@ -1,0 +1,15 @@
+{% if messages %}
+<div class="message" id="message">
+    <button onclick="closemessage(this)">X</button>
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+</div>
+<script>
+    function closemessage(element) {
+        const este = element.closest("#message");
+        console.log(este);
+        este.classList.toggle("message--hidden");
+    }
+</script>
+{% endif %}

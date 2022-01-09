@@ -6,19 +6,18 @@
 {% block style %} {% static 'css/dashboard.css' %} {% endblock %}
 {% block content %}
 <!-- {% include "main/snippets/header.html" %} -->
-{% include "main/snippets/sidebar.html" %}
 
-{% if messages %}
-{% for message in messages %}
-{{ message }}
-{% endfor %}
-{% endif %} 
 
-<main>
-    <h1>Dashboard</h1>
-    <a href="{% url 'register' %}">registro</a>
-    <a href="admin/">admin menu</a>
-    <a href="{% url 'logout'%}">logout</a>
+<main class="main">
+    {% include "main/snippets/sidebar.html" %}
+    <div class="main__content">
+        <h1 class="main__title">Dashboard</h1>
+
+        {% include "main/snippets/message.html" %}
+
+        <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.infocaptor.com%2Fimg%2Fbeautiful_dashboard_metrics_kpi_metalic.png&f=1&nofb=1"
+            alt="demo" style="height: 100vh;">
+    </div>
 </main>
 
 <!-- {% include "main/snippets/footer.html" %} -->

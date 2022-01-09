@@ -3,23 +3,39 @@
 @import "./mixins";
 
 body {
-	overflow-x: hidden;
+	overflow: hidden;
 
 	background: $void;
 	color: white;
 }
 
+main {
+	@include flex(row);
+	font-size: fontz(title);
+	text-align: center;
+	a {
+		@include button;
+		color: $accent_color;
+		cursor: pointer;
+
+		transition: color $hover_animation_time ease-in-out;
+		&:hover {
+			color: $accent_color2;
+		}
+	}
+}
+
 .navbar {
 	@include flex(column);
 	align-items: center;
-	position: absolute;
-	width: 16vw;
-	min-width: 200px;
+	position: relative;
+	min-width: 300px;
+	max-width: 300px;
 	height: 100vh;
 	box-sizing: border-box;
 
 	background: lighten($void, 5%);
-
+	box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.486);
 	&__group {
 		text-align: center;
 		width: 100%;
@@ -40,16 +56,32 @@ body {
 			color: white;
 		}
 	}
+	&__home {
+		h1 {
+			padding: 0 0 1rem 0;
+		}
+		a {
+			@include button;
+			color: darken(white, 5%);
+			transition: color $hover_animation_time ease-in-out;
+			&:hover {
+				color: white;
+			}
+		}
+	}
 	&__title.xtra--padding {
 		padding-bottom: 0.8rem;
 	}
 	&__list {
 		text-align: left;
 		font-size: fontz(normal);
-		padding: 0 2rem 2rem 2rem;
+		opacity: 1;
+		transform: translateY(0);
+		transition: opacity $hover_animation_time ease-in-out,
+			transform $hover_animation_time ease-in-out;
 		a {
 			@include button;
-			padding: 0.8em 0;
+			padding: 0.8rem 0 0.8rem 1rem;
 			border-radius: 10%;
 			text-transform: capitalize;
 
@@ -64,11 +96,15 @@ body {
 		}
 	}
 	&--hidden {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	&--nodisplay {
 		display: none;
-		transition: all $hover_animation_time ease-in-out;
 	}
 
 	&__account {
+		font-size: fontz(normal);
 		position: absolute;
 		bottom: 0;
 		@include flex(row);
@@ -92,18 +128,33 @@ body {
 	}
 }
 
-main {
-	@include flex_center(column);
-	font-size: fontz(title);
-	text-align: center;
-	a {
-		@include button;
-		color: $accent_color;
-		cursor: pointer;
-
-		transition: color $hover_animation_time ease-in-out;
-		&:hover {
-			color: $accent_color2;
-		}
+.main {
+	&__title {
+		font-size: fontz(accent);
+		padding: 5vh 0;
 	}
+	&__content {
+		width: 100%;
+	}
+}
+
+.message {
+	position: relative;
+	width: 80%;
+	font-size: fontz(normal);
+	border-radius: 0.5rem;
+	background: $alert_color;
+	padding: 1rem;
+	margin: 0 auto;
+	button {
+		@include button;
+		font-size: fontz(title);
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 0.2rem;
+	}
+}
+.message.message--hidden {
+	display: none;
 }

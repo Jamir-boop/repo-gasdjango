@@ -24,8 +24,8 @@
 @mixin button {
 	all: unset;
 
-	cursor: pointer;
 	text-decoration: none;
+	cursor: pointer;
 	text-rendering: optimizeLegibility;
 }
 

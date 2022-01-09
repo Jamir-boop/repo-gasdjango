@@ -1,12 +1,23 @@
-Crear modelos
+FRONT |
+    SIDEBAR
+        agregar iconos
+        administrar mejor control de espacio con respecto al main content
+        agregar toggle (js)
+            position relative/absolute
+
+    crear base-dashboard para heredar cada crud
+    mover templates a directorio externo
+
+BACK|
+    averiguar sobre como manejar tablas igual que AdminLTE SIN jquery
+        ajax
+    revisar controlador egresos
 
 Crud 
+    Egresos <-
     Admin
     Vendedor
     Stock
     Proveedor
     Venta
-    Egresos
     Cliente
-
-

@@ -77,9 +77,36 @@ table {
 }
 
 body {
-  overflow-x: hidden;
-  background: #2c3a47;
+  overflow: hidden;
+  background: #2c3147;
   color: white;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-size: clamp(20px, 2vw, 120px);
+  text-align: center;
+}
+
+main a {
+  all: unset;
+  text-decoration: none;
+  cursor: pointer;
+  text-rendering: optimizeLegibility;
+  color: #0984e3;
+  cursor: pointer;
+  -webkit-transition: color 180ms ease-in-out;
+  transition: color 180ms ease-in-out;
+}
+
+main a:hover {
+  color: #74b9ff;
 }
 
 .navbar {
@@ -93,13 +120,15 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: absolute;
-  width: 16vw;
-  min-width: 200px;
+  position: relative;
+  min-width: 300px;
+  max-width: 300px;
   height: 100vh;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: #364757;
+  background: #363c57;
+  -webkit-box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.486);
+          box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.486);
 }
 
 .navbar__group {
@@ -126,6 +155,24 @@ body {
   color: white;
 }
 
+.navbar__home h1 {
+  padding: 0 0 1rem 0;
+}
+
+.navbar__home a {
+  all: unset;
+  text-decoration: none;
+  cursor: pointer;
+  text-rendering: optimizeLegibility;
+  color: #f2f2f2;
+  -webkit-transition: color 180ms ease-in-out;
+  transition: color 180ms ease-in-out;
+}
+
+.navbar__home a:hover {
+  color: white;
+}
+
 .navbar__title.xtra--padding {
   padding-bottom: 0.8rem;
 }
@@ -133,15 +180,21 @@ body {
 .navbar__list {
   text-align: left;
   font-size: clamp(16px, 1vw, 25px);
-  padding: 0 2rem 2rem 2rem;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: opacity 180ms ease-in-out, -webkit-transform 180ms ease-in-out;
+  transition: opacity 180ms ease-in-out, -webkit-transform 180ms ease-in-out;
+  transition: opacity 180ms ease-in-out, transform 180ms ease-in-out;
+  transition: opacity 180ms ease-in-out, transform 180ms ease-in-out, -webkit-transform 180ms ease-in-out;
 }
 
 .navbar__list a {
   all: unset;
-  cursor: pointer;
   text-decoration: none;
+  cursor: pointer;
   text-rendering: optimizeLegibility;
-  padding: 0.8em 0;
+  padding: 0.8rem 0 0.8rem 1rem;
   border-radius: 10%;
   text-transform: capitalize;
   color: #cccccc;
@@ -152,16 +205,21 @@ body {
 
 .navbar__list a:hover {
   color: white;
-  background-color: #536d86;
+  background-color: #535c86;
 }
 
 .navbar--hidden {
+  opacity: 0;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+}
+
+.navbar--nodisplay {
   display: none;
-  -webkit-transition: all 180ms ease-in-out;
-  transition: all 180ms ease-in-out;
 }
 
 .navbar__account {
+  font-size: clamp(16px, 1vw, 25px);
   position: absolute;
   bottom: 0;
   display: -webkit-box;
@@ -179,8 +237,8 @@ body {
 
 .navbar__account a {
   all: unset;
-  cursor: pointer;
   text-decoration: none;
+  cursor: pointer;
   text-rendering: optimizeLegibility;
   padding: 0.8rem 0.3em;
   text-align: center;
@@ -194,39 +252,41 @@ body {
 
 .navbar__account a:hover {
   color: white;
-  background-color: #536d86;
+  background-color: #535c86;
 }
 
-main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  font-size: clamp(20px, 2vw, 120px);
-  text-align: center;
+.main__title {
+  font-size: clamp(30px, 5vw, 280px);
+  padding: 5vh 0;
 }
 
-main a {
+.main__content {
+  width: 100%;
+}
+
+.message {
+  position: relative;
+  width: 80%;
+  font-size: clamp(16px, 1vw, 25px);
+  border-radius: 0.5rem;
+  background: rgba(199, 181, 21, 0.25);
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.message button {
   all: unset;
-  cursor: pointer;
   text-decoration: none;
-  text-rendering: optimizeLegibility;
-  color: #0984e3;
   cursor: pointer;
-  -webkit-transition: color 180ms ease-in-out;
-  transition: color 180ms ease-in-out;
+  text-rendering: optimizeLegibility;
+  font-size: clamp(20px, 2vw, 120px);
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.2rem;
 }
 
-main a:hover {
-  color: #74b9ff;
+.message.message--hidden {
+  display: none;
 }
 /*# sourceMappingURL=dashboard.css.map */
