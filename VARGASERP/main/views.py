@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Egresos
 from django.contrib.auth.decorators import login_required
-
 from accounts.decorators import allowed_users
 
 # Create your views here.

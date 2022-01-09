@@ -1,3 +1,11 @@
+BACK |
+    averiguar sobre como manejar tablas igual que AdminLTE SIN jquery
+        ajax
+        datatables
+    revisar controlador egresos
+
+    crud por controlador en archivo propio
+
 FRONT |
     SIDEBAR
         agregar iconos
@@ -7,11 +15,6 @@ FRONT |
 
     crear base-dashboard para heredar cada crud
     mover templates a directorio externo
-
-BACK|
-    averiguar sobre como manejar tablas igual que AdminLTE SIN jquery
-        ajax
-    revisar controlador egresos
 
 Crud 
     Egresos <-
