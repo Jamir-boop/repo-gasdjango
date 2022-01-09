@@ -120,25 +120,42 @@ main {
 	}
 
 	&__account {
+		// @include flex_center(row);
 		font-size: fontz(normal);
+		font-weight: bold;
 		position: absolute;
 		bottom: 0;
-		@include flex(row);
-		align-items: flex-end;
 		width: 100%;
 		a {
 			@include button;
-			padding: 0.8rem 0.3em;
+			box-sizing: border-box;
 			text-align: center;
 			width: 100%;
 			display: block;
 			text-transform: uppercase;
 			color: darken(white, 20%);
 			transition: color $hover_animation_time ease-in-out;
+			height: auto 0;
+
+			h1 {
+				padding: 1rem 0.4em;
+			}
+			img {
+				position: absolute;
+				top: 50%;
+				left: 20px;
+				transform: translateY(-50%);
+
+				opacity: 0.8;
+				transition: opacity $hover_animation_time ease-in-out;
+			}
 
 			&:hover {
 				color: white;
 				background-color: lighten($void, 20%);
+			}
+			&:hover img {
+				opacity: 1;
 			}
 		}
 	}
@@ -180,5 +197,4 @@ form {
 	background-color: darken($void, 10%);
 	width: 100%;
 	min-height: 10vh;
-	border: 1px solid white;
 }

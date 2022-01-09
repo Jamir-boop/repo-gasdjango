@@ -2,36 +2,24 @@
 {% load static %}
 {% load has_group %}
 
-{% block title %} Dashboard Gas {% endblock %}
+{% block title %} Editar Egreso {% endblock %}
 {% block style %} {% static 'css/dashboard.css' %} {% endblock %}
+{% block dashboard_title %}Editar Egreso{% endblock %}
 {% block content %}
-<!-- {% include "main/snippets/header.html" %} -->
-{% include "main/snippets/sidebar.html" %}
+<form action="/validar-edicion-egreso/{{egreso.id}}" method="post">
+    <h1>AGREGAR EGRESO</h1>
 
-{% if messages %}
-{% for message in messages %}
-{{ message }}
-{% endfor %}
-{% endif %}
+    {% csrf_token %}
 
-<main>
-    AGREGAR EGRESO
-    <form action="/validar-edicion-egreso/{{egreso.id}}" method="post">
+    <label for="txtCategoria">Categoria</label>
+    <input type="text" id="txtCategoria" name="txtCategoria" value="{{egreso.categoria}}" required>
 
-        {% csrf_token %}
+    <label for="txtDescripcion">Descripcion</label>
+    <input type="text" id="txtDescripcion" name="txtDescripcion" value="{{egreso.descripcion}}" required>
 
-        <label for="txtCategoria">Categoria</label>
-        <input type="text" id="txtCategoria" name="txtCategoria" value="{{egreso.categoria}}" required>
+    <label for="txtCostos">Costo</label>
+    <input type="text" id="txtCostos" name="txtCostos" value="{{egreso.costos}}" required>
 
-        <label for="txtDescripcion">Descripcion</label>
-        <input type="text" id="txtDescripcion" name="txtDescripcion" value="{{egreso.descripcion}}" required>
-
-        <label for="txtCostos">Costo</label>
-        <input type="text" id="txtCostos" name="txtCostos" value="{{egreso.costos}}" required>
-
-        <button type="submit">Actualizar</button>
-    </form>
-</main>
-
-<!-- {% include "main/snippets/footer.html" %} -->
+    <button type="submit">Actualizar</button>
+</form>
 {% endblock %}

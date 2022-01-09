@@ -226,18 +226,9 @@ main a:hover {
 
 .navbar__account {
   font-size: clamp(16px, 1vw, 25px);
+  font-weight: bold;
   position: absolute;
   bottom: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
   width: 100%;
 }
 
@@ -246,7 +237,8 @@ main a:hover {
   text-decoration: none;
   cursor: pointer;
   text-rendering: optimizeLegibility;
-  padding: 0.8rem 0.3em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   text-align: center;
   width: 100%;
   display: block;
@@ -254,11 +246,31 @@ main a:hover {
   color: #cccccc;
   -webkit-transition: color 180ms ease-in-out;
   transition: color 180ms ease-in-out;
+  height: auto 0;
+}
+
+.navbar__account a h1 {
+  padding: 1rem 0.4em;
+}
+
+.navbar__account a img {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  opacity: 0.8;
+  -webkit-transition: opacity 180ms ease-in-out;
+  transition: opacity 180ms ease-in-out;
 }
 
 .navbar__account a:hover {
   color: white;
   background-color: #535c86;
+}
+
+.navbar__account a:hover img {
+  opacity: 1;
 }
 
 .main__title {
@@ -301,6 +313,5 @@ form {
   background-color: #181b28;
   width: 100%;
   min-height: 10vh;
-  border: 1px solid white;
 }
 /*# sourceMappingURL=dashboard.css.map */

@@ -1,3 +1,4 @@
+{% load static %}
 {% load has_group %}
 
 <aside class="navbar">
@@ -36,7 +37,11 @@
     {% endif %}
 
     <div class="navbar__account">
-        <a href="{% url 'logout' %}">logout</a>
+
+        <a href="{% url 'logout' %}">
+            <img src="{% static 'image/logout.svg' %}" width="30px" alt="logout">
+            <h1>logout</h1>
+        </a>
     </div>
 </aside>
 <script>
