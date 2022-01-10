@@ -1,7 +1,5 @@
 BACK |
-    averiguar sobre como manejar tablas igual que AdminLTE SIN jquery
-        ajax
-        datatables
+    datatables
     revisar controlador egresos
 
     registrar modelos en admin
