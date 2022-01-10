@@ -15,17 +15,15 @@
 </head>
 
 <body>
-  <!-- {% include "main/snippets/header.html" %} -->
   <main class="main">
-    {% include "main/snippets/sidebar.html" %}
+    {% include "snippets/sidebar.html" %}
     <div class="main__content">
       <h1 class="main__title">{% block dashboard_title %}Dashboard{% endblock %}</h1>
-      {% include "main/snippets/message.html" %}
+      {% include "snippets/message.html" %}
 
       {% block content %} {% endblock %}
     </div>
   </main>
-  <!-- {% include "main/snippets/footer.html" %} -->
 </body>
 
 </html>

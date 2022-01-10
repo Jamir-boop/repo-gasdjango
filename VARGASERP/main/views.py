@@ -9,7 +9,7 @@ from accounts.decorators import allowed_users
 @allowed_users(allowed_roles=['admin', 'vendedor'])
 def index(request):
     context = {}
-    return render(request, 'main/index.html', context)
+    return render(request, 'index.html', context)
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['admin', 'vendedor'])

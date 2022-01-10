@@ -10,7 +10,7 @@ from .decorators import allowed_users
 
 # Create your views here.
 
-INDEX = 'main:index'
+INDEX = '/'
 
 def login_user(request):
     if request.user.is_authenticated:

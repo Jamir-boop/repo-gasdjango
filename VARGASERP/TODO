@@ -4,6 +4,7 @@ BACK |
         datatables
     revisar controlador egresos
 
+    registrar modelos en admin
     crud por controlador en archivo propio
 
 FRONT |
