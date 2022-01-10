@@ -142,11 +142,6 @@ main a:hover {
   width: 100%;
 }
 
-.navbar__profile {
-  text-align: center;
-  padding: 2vh 0 !important;
-}
-
 .navbar__title {
   font-size: clamp(16px, 1vw, 25px);
   text-transform: uppercase;
@@ -159,6 +154,16 @@ main a:hover {
 
 .navbar__title:hover {
   color: white;
+}
+
+.navbar__profile {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  text-align: center;
+  padding: 2vh 0 !important;
 }
 
 .navbar__home h1 {

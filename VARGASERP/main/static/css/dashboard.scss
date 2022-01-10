@@ -56,10 +56,6 @@ main {
 		text-align: center;
 		width: 100%;
 	}
-	&__profile {
-		text-align: center;
-		padding: 2vh 0 !important;
-	}
 	&__title {
 		font-size: fontz(normal);
 		text-transform: uppercase;
@@ -71,6 +67,11 @@ main {
 		&:hover {
 			color: white;
 		}
+	}
+	&__profile {
+		@include no_touchy;
+		text-align: center;
+		padding: 2vh 0 !important;
 	}
 	&__home {
 		h1 {
