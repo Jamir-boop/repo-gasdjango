@@ -7,9 +7,7 @@ BACK |
 
 FRONT |
     SIDEBAR
-        agregar toggle (js)
-            position relative/absolute
-        ruta agregar clase active a boton
+        solucionar agregar clase active a boton y menu - open
 
     crear base-dashboard para heredar cada crud
     mover templates a directorio externo

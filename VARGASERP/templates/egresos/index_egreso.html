@@ -2,13 +2,7 @@
 {% load static %}
 {% load has_group %}
 
-{% block title %}Tabla Egresos{% endblock %}
-
-{% block addbutton %}
-<a class="btn btn-app bg-info float-right" href="/agregar-egreso">
-    <i class="fas fa-plus"></i> Agregar egreso
-</a>
-{% endblock %}
+{% block addhref %}/agregar-egreso{% endblock %}
 {% block table %}
 <table id="example1" class="table table-bordered table-striped">
     <thead>
@@ -16,29 +10,28 @@
             <th>Categoria</th>
             <th>Descripcion</th>
             <th>Costos</th>
-            <th>Editar</th>
-            <th>Eliminar</th>
+            <th>Opciones</th>
         </tr>
     </thead>
     <tbody>
-        {% for egreso in egresos %}
+        {% for item in registro %}
         <tr>
-            <td>{{egreso.categoria}}</td>
-            <td>{{egreso.descripcion}}</td>
-            <td>{{egreso.costos}}</td>
+            <td>{{item.categoria}}</td>
+            <td>{{item.descripcion}}</td>
+            <td>{{item.costos}}</td>
             <td>
-                <a class="btn btn-info btn-sm" href="/editar-egreso/{{egreso.id}}">
-                    <i class="fas fa-pencil-alt">
-                    </i>
-                    Editar
-                </a>
-            </td>
-            <td>
-                <a class="btn btn-danger btn-sm" href="/eliminar-egreso/{{egreso.id}}">
-                    <i class="fas fa-trash">
-                    </i>
-                    Eliminar
-                </a>
+                <div class="btn-group">
+                    <a type="button" class="btn btn-info" href="/editar-egreso/{{item.id}}">
+                        <i class="fas fa-pencil-alt">
+                        </i>
+                        Editar
+                    </a>
+                    <a type="button" class="btn btn-danger" href="/eliminar-egreso/{{item.id}}">
+                        <i class=" fas fa-trash">
+                        </i>
+                        Eliminar
+                    </a>
+                </div>
             </td>
         </tr>
         {% endfor %}

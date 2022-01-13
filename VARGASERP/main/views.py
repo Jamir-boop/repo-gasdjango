@@ -16,8 +16,13 @@ def index(request):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['admin', 'vendedor'])
 def egresos(request):
-    egresos = Egresos.objects.all()
-    context = {"egresos" : egresos}
+    registro = Egresos.objects.all()
+    # "tabla" y "desc" son propiedades que se muestran como info adicional en la página 
+    context = {
+        "registro" : registro,
+        "tabla": "Egresos",
+        "desc":"Registro de gastos de la empresa"
+    }
     return render(request, 'egresos/index_egreso.html', context)
 
 @login_required(login_url='login')
