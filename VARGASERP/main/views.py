@@ -11,12 +11,14 @@ def index(request):
     context = {}
     return render(request, 'index.html', context)
 
+
+# EGRESOS
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['admin', 'vendedor'])
 def egresos(request):
     egresos = Egresos.objects.all()
     context = {"egresos" : egresos}
-    return render(request, 'egresos/index.html', context) 
+    return render(request, 'egresos/index_egreso.html', context)
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['admin', 'vendedor'])

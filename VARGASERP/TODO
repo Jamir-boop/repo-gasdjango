@@ -7,10 +7,9 @@ BACK |
 
 FRONT |
     SIDEBAR
-        agregar iconos
-        administrar mejor control de espacio con respecto al main content
         agregar toggle (js)
             position relative/absolute
+        ruta agregar clase active a boton
 
     crear base-dashboard para heredar cada crud
     mover templates a directorio externo
