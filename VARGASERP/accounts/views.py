@@ -27,7 +27,7 @@ def login_user(request):
                 messages.success(request, ("Error al iniciar sesion intente nuevamente"))
                 return redirect('login')
         else:
-            return render(request, 'authentication/login.html', {})
+            return render(request, 'auth/login.html', {})
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['admin', 'vendedor'])
@@ -50,7 +50,7 @@ def register_user(request):
         form = CreateUserForm()
 
     context = {'form': form }
-    return render(request, 'authentication/register.html', context)
+    return render(request, 'auth/register.html', context)
 
 @login_required(login_url='login')
 def logout_user(request):

@@ -1,0 +1,60 @@
+{% extends "auth/base_auth.html" %}
+{% load static %}
+
+{% block title %} Iniciar Sesion {% endblock %}
+
+{% block content %}
+<div class="login-box">
+    <div class="login-logo">
+        <img src="{% static 'image/fire.ico' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3">
+        <h2>VAR<b>GAS</b></h2>
+    </div>
+
+    {% include "snippets/message.html" %}
+
+    <!-- /.login-logo -->
+    <div class="card">
+        <div class="card-body login-card-body">
+            <p class="login-box-msg">Igresa tus credenciales para iniciar sesión</p>
+
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    <input type="user" name="user" class="form-control" placeholder="Usuario" required>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-user"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                        <div class="icheck-primary">
+                            <input type="checkbox" id="remember">
+                            <label for="remember">
+                                Recuérdame
+                            </label>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+
+            <!-- /.login-card-body -->
+        </div>
+    </div>
+    <!-- /.login-box -->
+</div>
+{% endblock %}

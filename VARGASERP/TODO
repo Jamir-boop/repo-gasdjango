@@ -1,16 +1,19 @@
 BACK |
-    datatables
-    revisar controlador egresos
-
     registrar modelos en admin
     crud por controlador en archivo propio
+
+    editar info cuenta
 
 FRONT |
     SIDEBAR
         solucionar agregar clase active a boton y menu - open
 
-    crear base-dashboard para heredar cada crud
-    mover templates a directorio externo
+    Messages manejar succes | danger | alert
+    hacer plantilla de formularios
+
+    vista cambiar contraseña
+
+    vista de perfil?
 
 Crud 
     Egresos <-
