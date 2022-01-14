@@ -24,7 +24,10 @@ def login_user(request):
                 login(request, user)
                 return redirect(INDEX)
             else:
-                messages.success(request, ("Error al iniciar sesion intente nuevamente"))
+                messages.add_message(request,
+                    messages.ERROR, 
+                    'Contraseña o usuario incorrectos, intente nuevamente.'
+                )
                 return redirect('login')
         else:
             return render(request, 'auth/login.html', {})
@@ -43,7 +46,10 @@ def register_user(request):
             add_group = Group.objects.get(name='vendedor')
         user.groups.add(add_group)
 
-        messages.success(request, f'El {add_group} {username} fue creado correctamente. 🙂')
+        messages.add_message(request,
+            messages.SUCCESS, 
+            f'El {add_group} {username} fue creado correctamente.'
+        )
         return redirect('login')
 
     else:
@@ -55,5 +61,8 @@ def register_user(request):
 @login_required(login_url='login')
 def logout_user(request):
     logout(request)
-    messages.success(request, ("Se a cerrado sesion"))
+    messages.add_message(request,
+        messages.WARNING, 
+        'Se a cerrado sesión.'
+    )
     return redirect('login')

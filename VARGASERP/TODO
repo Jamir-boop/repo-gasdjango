@@ -1,18 +1,24 @@
 BACK |
+    validar registro y validar edicion en la misma funcion
     registrar modelos en admin
     crud por controlador en archivo propio
-
     editar info cuenta
+    AUTOCOMPLETADO formularios
+    MODELOS |
+        agregar tabla de categorias para egresos con el fin de generar un dropdown menu
+    considerar unir bases y controlar las dependencias
+    DATATABLES | 
+        plugin elegir cuantas lineas se muestran por tabla
 
 FRONT |
     SIDEBAR
+        navegacion
         solucionar agregar clase active a boton y menu - open
 
     Messages manejar succes | danger | alert
+    sistema para confirmar eliminacion de registros
     hacer plantilla de formularios
-
     vista cambiar contraseña
-
     vista de perfil?
 
 Crud 
@@ -23,3 +29,5 @@ Crud
     Proveedor
     Venta
     Cliente
+
+ README.md | Detallar pasos para hacer build del proyecto
