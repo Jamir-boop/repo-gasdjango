@@ -40,12 +40,14 @@ def validar_egresos(request):
     descripcion = request.POST['txtDescripcion']
     costos = request.POST['txtCostos']
 
-    egreso = Egresos.objects.create(
-        categoria=categoria, descripcion=descripcion, costos=costos
+    Egresos.objects.create(
+        categoria=categoria,
+        descripcion=descripcion,
+        costos=costos
     )
     messages.add_message(request,
-                         messages.INFO,
-                         f'Se guardó nuevo registro {categoria}'
+                         messages.SUCCESS,
+                         f'Se guardó nuevo registro {categoria} por {costos} soles'
                          )
     return redirect(INDEX)
 
@@ -56,7 +58,6 @@ def editar_egreso(request, id):
     item = Egresos.objects.get(id=id)
     context = {
         "ubicacion": UBICACION,
-        "desc": "Registro de gastos de la empresa",
         "egreso": item
     }
     return render(request, 'egresos/editar_egreso.html', context)
@@ -77,8 +78,8 @@ def validar_edicion_egresos(request, id):
 
     egreso.save()
     messages.add_message(request,
-                         messages.INFO,
-                         f'Se actualizó registro {categoria}'
+                         messages.SUCCESS,
+                         f'Se actualizó registro {categoria} - {descripcion}'
                          )
     return redirect(INDEX)
 
@@ -89,7 +90,7 @@ def eliminar_egresos(request, id):
     egreso = Egresos.objects.get(id=id)
     egreso.delete()
     messages.add_message(request,
-                         messages.SUCCESS,
-                         'Se eliminó el registro'
+                         messages.INFO,
+                         f'Se eliminó el registro {egreso.categoria}'
                          )
     return redirect(INDEX)

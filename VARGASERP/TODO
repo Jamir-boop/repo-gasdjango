@@ -1,7 +1,6 @@
 BACK |
     validar registro y validar edicion en la misma funcion
     registrar modelos en admin
-    crud por controlador en archivo propio
     editar info cuenta
     AUTOCOMPLETADO formularios
     MODELOS |
